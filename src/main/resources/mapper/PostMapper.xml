@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guo.mapper.PostMapper">
+
+    <select id="selectPosts" resultType="com.guo.vo.PostVO">
+        select
+              p.*,
+
+             u.id as authorId,
+             u.username as authorName,
+             u.avatar as authorAvatar,
+
+             c.name as categoryName
+        from
+             gfblog.post p
+        left join gfblog.user u on p.user_id = u.id
+        left join gfblog.category c on p.category_id = c.id
+
+        ${ew.customSqlSegment}
+    </select>
+
+</mapper>
