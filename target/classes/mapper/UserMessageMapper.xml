@@ -2,4 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.guo.mapper.UserMessageMapper">
 
+    <select id="selectMessages" resultType="com.guo.vo.UserMessageVO">
+
+      select
+      m.*,
+      (
+          select
+            `username`
+          from
+            `user`
+          where id = m.from_user_id
+      ) as fromUserName,
+      (
+          SELECT
+            title
+          from
+            post
+          WHERE id = m.post_id
+      ) AS postTitle
+    from
+      `user_message` m
+
+    ${ew.customSqlSegment}
+
+    </select>
+
 </mapper>

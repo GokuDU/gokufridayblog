@@ -1,4 +1,4 @@
-package com.example.config;
+package com.guo.config;
 
 import com.google.code.kaptcha.impl.DefaultKaptcha;
 import com.google.code.kaptcha.util.Config;

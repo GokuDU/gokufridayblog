@@ -12,5 +12,13 @@ spring:
       classic_compatible: true  # 处理空值
       datetime_format: yyyy-MM-dd HH:mm
       number_format: 0.##
+  # redis配置因为都是默认值，所以其实是可以不写的
+  redis:
+    hosts: localhost
+    port: 6379
+    password:
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
+file:
+  upload:
+    dir: ${user.dir}/upload

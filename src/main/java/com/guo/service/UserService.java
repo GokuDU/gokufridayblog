@@ -1,7 +1,9 @@
 package com.guo.service;
 
+import com.guo.common.lang.Result;
 import com.guo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.guo.shiro.AccountProfile;
 
 /**
  * <p>
@@ -12,5 +14,9 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2020-06-13
  */
 public interface UserService extends IService<User> {
+
+    Result register(User user);
+
+    AccountProfile login(String username, String password);
 
 }

@@ -1,11 +1,11 @@
-package com.example.util;
+package com.guo.util;
 
 import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.StrUtil;
-import com.example.common.lang.Consts;
-import com.example.common.lang.Result;
-import com.example.shiro.AccountProfile;
+import com.guo.common.lang.Consts;
+import com.guo.common.lang.Result;
+import com.guo.shiro.AccountProfile;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,7 @@ public class UploadUtil {
 
     public Result upload(String type, MultipartFile file) throws IOException {
 
+        // type 、 file 都不能为空，否则上传失败
         if(StrUtil.isBlank(type) || file.isEmpty()) {
             return Result.fail("上传失败");
         }
@@ -54,6 +55,7 @@ public class UploadUtil {
             dest.getParentFile().mkdirs();
         }
         try {
+            // 传进来的文件 file 复制到 目标 dest 中
             file.transferTo(dest);
             log.info("上传成功后的文件路径未：" + filePath + fileName);
 

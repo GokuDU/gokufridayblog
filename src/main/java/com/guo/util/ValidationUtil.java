@@ -1,4 +1,4 @@
-package com.example.util;
+package com.guo.util;
 
 import lombok.Data;
 import org.hibernate.validator.HibernateValidator;

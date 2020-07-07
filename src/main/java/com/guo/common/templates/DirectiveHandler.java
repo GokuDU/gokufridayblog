@@ -1,4 +1,4 @@
-package com.example.common.templates;
+package com.guo.common.templates;
 
 import freemarker.core.Environment;
 import freemarker.template.*;

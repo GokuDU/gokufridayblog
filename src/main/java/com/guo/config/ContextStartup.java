@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.guo.entity.Category;
 import com.guo.mapper.CategoryMapper;
 import com.guo.service.CategoryService;
+import com.guo.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -24,6 +25,9 @@ public class ContextStartup implements ApplicationRunner, ServletContextAware {
     @Autowired
     ServletContext servletContext;
 
+    @Autowired
+    PostService postService;
+
     // 项目启动的时候就会调用 run
     // 查询 status = 0 的分类列表
     //
@@ -32,8 +36,11 @@ public class ContextStartup implements ApplicationRunner, ServletContextAware {
         List<Category> categories = categoryService.list(new QueryWrapper<Category>()
                 .eq("status", 0)
         );
-        // 存储全局数据
+        // 存储全局数据，注入到应用
         servletContext.setAttribute("categories",categories);
+
+        // 初始化本周热议
+        postService.initWeekRank();
     }
 
     @Override
