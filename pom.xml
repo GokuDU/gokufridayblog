@@ -20,6 +20,12 @@
 
     <dependencies>
 
+        <!-- WebSocket 即时通知 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+
         <!-- shiro权限框架 -->
         <dependency>
             <groupId>org.apache.shiro</groupId>

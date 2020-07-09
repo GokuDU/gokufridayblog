@@ -99,7 +99,7 @@ public class AuthController extends BaseController{
     @ResponseBody
     @PostMapping("/register")
     public Result doRegister(User user,String repass,String vercode) {
-        // 校验用户名
+        // 校验用户
         ValidationUtil.ValidResult validResult = ValidationUtil.validateBean(user);
         if (validResult.hasErrors()) {
             return Result.fail(validResult.getErrors());

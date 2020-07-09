@@ -2,10 +2,7 @@ package com.guo.controller;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.guo.entity.UserMessage;
-import com.guo.service.CommentService;
-import com.guo.service.PostService;
-import com.guo.service.UserMessageService;
-import com.guo.service.UserService;
+import com.guo.service.*;
 import com.guo.shiro.AccountProfile;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +26,12 @@ public class BaseController {
 
     @Autowired
     UserMessageService userMessageService;
+
+    @Autowired
+    UserCollectionService userCollectionService;
+
+    @Autowired
+    CategoryService categoryService;
 
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal

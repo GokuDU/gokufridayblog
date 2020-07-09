@@ -40,7 +40,7 @@ layui.define('fly', function(exports){
   //提交回答
   fly.form['/post/reply/'] = function(data, required){
     var tpl = '<li>\
-      <div class="detail-about detail-about-reply">\
+      <div class="detail-about deta2il-about-reply">\
         <a class="fly-avatar" href="/u/{{ layui.cache.user.uid }}" target="_blank">\
           <img src="{{= d.user.avatar}}" alt="{{= d.user.username}}">\
         </a>\
@@ -72,9 +72,9 @@ layui.define('fly', function(exports){
 
   //求解管理
   gather.jieAdmin = {
-    //删求解
+    //删除博客
     del: function(div){
-      layer.confirm('确认删除该求解么？', function(index){
+      layer.confirm('确认删除该博客么?', function(index){
         layer.close(index);
         fly.json('/post/delete/', {
           id: div.data('id')
@@ -130,7 +130,12 @@ layui.define('fly', function(exports){
       fly.json('/collection/find/', {
         pid: div.data('id')
       }, function(res){
-        jieAdmin.append('<span class="layui-btn layui-btn-xs jie-admin '+ (res.data.collection ? 'layui-btn-danger' : '') +'" type="collect" data-type="'+ (res.data.collection ? 'remove' : 'add') +'">'+ (res.data.collection ? '取消收藏' : '收藏') +'</span>');
+        jieAdmin.append(
+            '<span class="layui-btn layui-btn-xs jie-admin '+
+            (res.data.collection ? 'layui-btn-danger' : '') +
+            '" type="collect" data-type="'+
+            (res.data.collection ? 'remove' : 'add') +'">'+ (res.data.collection ? '取消收藏' : '收藏') +
+            '</span>');
       });
     }
   }();
@@ -206,7 +211,7 @@ layui.define('fly', function(exports){
     ,del: function(li){ //删除
       layer.confirm('确认删除该回答么？', function(index){
         layer.close(index);
-        fly.json('/post/jieda-delete/', {
+        fly.json('/post/delReply/', {
           id: li.data('id')
         }, function(res){
           if(res.status === 0){

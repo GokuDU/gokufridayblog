@@ -4,6 +4,7 @@ import com.guo.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,17 @@ public class AccountRealm extends AuthorizingRealm {
     // 授权
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        // 获取当前登录用户
+        AccountProfile accountProfile= (AccountProfile) principals.getPrimaryPrincipal();
+
+        // user表中的超级管理员 admin Id = 8
+        // 给其赋予 admin 角色
+        if (accountProfile.getId() == 8) {
+            SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+            info.addRole("admin");
+            return info;
+        }
+
         return null;
     }
 

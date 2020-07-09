@@ -12,6 +12,8 @@
 
         <script src="/res/layui/layui.js"></script>
         <script src="/res/js/jquery.min.js"></script>
+        <script src="/res/js/sockjs.js"></script>
+        <script src="/res/js/stomp.js"></script>
     </head>
     <body>
 
@@ -24,30 +26,39 @@
 
     <#include "/inc/footer.ftl"/>
 
-    <script>
-        // layui.cache.page = '';
-        layui.cache.user = {
-            username: '${profile.username!"游客"}'
-            ,uid: ${profile.id!"-1"}
-            ,avatar: '${profile.avatar!"/res/images/avatar/00.jpg"}'
-            ,experience: 83
-            ,sex: '${profile.sex!"男"}'
-        };
-        // layui.cache.user = {
-        //     username: '游客'
-        //     ,uid: -1
-        //     ,avatar: '/res/images/avatar/00.jpg'
-        //     ,experience: 83
-        //     ,sex: '男'
-        // };
-        layui.config({
-            version: "3.0.0"
-            ,base: '/res/mods/' //这里实际使用时，建议改成绝对路径
-        }).extend({
-            fly: 'index'
-        }).use('fly');
-    </script>
+<script>
+    // layui.cache.page = '';
+    layui.cache.user = {
+        username: '${profile.username!"游客"}'
+        ,uid: ${profile.id!"-1"}
+        ,avatar: '${profile.avatar!"/res/images/avatar/00.jpg"}'
+        ,experience: 83
+        ,sex: '${profile.sex!"男"}'
+    };
+    layui.config({
+        version: "3.0.0"
+        ,base: '/res/mods/' //这里实际使用时，建议改成绝对路径
+    }).extend({
+        fly: 'index'
+    }).use('fly');
+</script>
 
-    </body>
-    </html>
+<script>
+    <#--$(function () {-->
+        <#--if(layui.cache.user.uid !== -1 && elemUser[0]) {-->
+            <#--// 连接 webSocket注册端点 的访问地址-->
+            <#--var socket = new SockJS("/webSocket");-->
+            <#--// 交给 stomp协议 处理-->
+            <#--stompClient = Stomp.over(socket);-->
+            <#--stompClient.connect({},function (frame) {-->
+                <#--// 订阅-->
+                <#--stompClient.subscribe("/user/" + ${profile.id} + "/messCount" ,function (res) {-->
+                    <#--// res 监听到的消息-->
+                    <#--// 弹窗-->
+                <#--});-->
+            <#--});-->
+        <#--}-->
+    <#--});-->
+</script>
+
 </#macro>

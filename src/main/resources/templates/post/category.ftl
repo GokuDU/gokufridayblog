@@ -44,4 +44,8 @@
     </div>
 </div>
 
+<script>
+    layui.cache.page = 'jie';
+</script>
+
 </@layout>

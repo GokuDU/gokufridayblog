@@ -98,6 +98,8 @@ public class UserController extends BaseController{
         // 因为用户登录数据 存放在 AccountProfile （在头栏目填充数据） ，需要更新这个数据
         AccountProfile accountProfile = getProfile();
         accountProfile.setUsername(userTemp.getUsername());
+        accountProfile.setSign(userTemp.getSign());
+        accountProfile.setGender(userTemp.getGender());
 
         // accountProfile 放到session 中
         SecurityUtils.getSubject().getSession().setAttribute("profile", accountProfile);

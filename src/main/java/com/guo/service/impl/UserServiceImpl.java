@@ -47,7 +47,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         userTemp.setEmail(user.getEmail());
         // 设置一些注册默认属性
         userTemp.setCreated(new Date());
-        userTemp.setGender("0");
+        userTemp.setGender("1");
         userTemp.setPoint(0);
         userTemp.setVipLevel(0);
         userTemp.setCommentCount(0);
