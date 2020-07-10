@@ -44,21 +44,43 @@
 </script>
 
 <script>
-    <#--$(function () {-->
-        <#--if(layui.cache.user.uid !== -1 && elemUser[0]) {-->
-            <#--// 连接 webSocket注册端点 的访问地址-->
-            <#--var socket = new SockJS("/webSocket");-->
-            <#--// 交给 stomp协议 处理-->
-            <#--stompClient = Stomp.over(socket);-->
-            <#--stompClient.connect({},function (frame) {-->
-                <#--// 订阅-->
-                <#--stompClient.subscribe("/user/" + ${profile.id} + "/messCount" ,function (res) {-->
-                    <#--// res 监听到的消息-->
-                    <#--// 弹窗-->
-                <#--});-->
-            <#--});-->
-        <#--}-->
-    <#--});-->
+    function showTips(count) {
+        var elemUser = $('.fly-nav-user');
+        var msg = $('<a class="fly-nav-msg" href="javascript:;">'+ count +'</a>');
+        elemUser.append(msg);
+        msg.on('click', function(){
+            location.href = "/user/message";
+        });
+        layer.tips('你有 '+ res.count +' 条未读消息', msg, {
+            tips: 3
+            ,tipsMore: true
+            ,fixed: true
+        });
+        msg.on('mouseenter', function(){
+            layer.closeAll('tips');
+        })
+    }
+    $(function () {
+        var elemUser = $('.fly-nav-user');
+        if(layui.cache.user.uid !== -1 && elemUser[0]) {
+            // 连接 webSocket注册端点 的访问地址
+            var socket = new SockJS("/webSocket");
+            // 交给 stomp协议 处理
+            stompClient = Stomp.over(socket);
+            stompClient.connect({},function (frame) {
+                // 订阅
+                stompClient.subscribe("/user/" + ${profile.id} + "/messCount" ,function (res) {
+
+                    console.log(res);
+
+                    // res 监听到的消息
+                    // 弹窗
+                    // body就是传过来的 count
+                    showTips(res.body)
+                });
+            });
+        }
+    });
 </script>
 
 </#macro>

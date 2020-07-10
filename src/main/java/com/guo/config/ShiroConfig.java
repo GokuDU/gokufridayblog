@@ -56,16 +56,9 @@ public class ShiroConfig {
         Map<String, String> hashMap = new LinkedHashMap<>();
         // 登录不需要权限
         hashMap.put("/login", "anon");
-//        hashMap.put("/user/home", "authc");
-//        hashMap.put("/user/set", "authc");
-//        hashMap.put("/user/index", "authc");
-//        hashMap.put("/user/message", "authc");
-//        hashMap.put("/user/upload", "authc");
-//        hashMap.put("/user/repass", "authc");
-//        hashMap.put("/collection/find/", "authc");
-//        hashMap.put("/collection/add/", "authc");
-//        hashMap.put("/collection/remove/", "authc");
+        hashMap.put("/webSocket", "anon");
 
+        // 需要登录
         hashMap.put("/user/home", "myAuth");
         hashMap.put("/user/set", "myAuth");
         hashMap.put("/user/upload", "myAuth");

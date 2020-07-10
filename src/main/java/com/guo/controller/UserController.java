@@ -12,6 +12,7 @@ import com.guo.entity.User;
 import com.guo.entity.UserMessage;
 import com.guo.shiro.AccountProfile;
 import com.guo.util.UploadUtil;
+import com.guo.vo.UserMessageVO;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -146,6 +148,20 @@ public class UserController extends BaseController{
         User user = userService.getById(getProfileId());
         req.setAttribute("user", user);
 
+        // 发表文章数量
+        int publishCount = postService.count(new QueryWrapper<Post>()
+                .eq("user_id", getProfileId())
+                .orderByDesc("created")
+        );
+
+        // 收藏文章数量
+        int collectCount = postService.count(new QueryWrapper<Post>()
+                .inSql("id", "SELECT post_id FROM user_collection WHERE user_id = " + getProfileId())
+        );
+
+        req.setAttribute("publishCount",publishCount);
+        req.setAttribute("collectCount",collectCount);
+
         return "/user/index";
     }
 
@@ -158,6 +174,8 @@ public class UserController extends BaseController{
                 .eq("user_id", getProfileId())
                 .orderByDesc("created")
         );
+
+
         return Result.success(page);
     }
 
@@ -178,6 +196,8 @@ public class UserController extends BaseController{
         IPage page = postService.page(getPage(), new QueryWrapper<Post>()
                 .inSql("id", "SELECT post_id FROM user_collection WHERE user_id = "+getProfileId())
         );
+
+
         return Result.success(page);
     }
 
@@ -185,10 +205,22 @@ public class UserController extends BaseController{
     @GetMapping("/user/message")
     public String message() {
 
-        IPage page = userMessageService.paging(getPagePlus(), new QueryWrapper<UserMessage>()
+        IPage<UserMessageVO> page = userMessageService.paging(getPagePlus(), new QueryWrapper<UserMessage>()
                 .eq("to_user_id", getProfileId())  // 接收消息用户id
                 .orderByDesc("created")
         );
+
+        // 把消息改为已读状态
+        List<Long> ids = new ArrayList<>();
+        for (UserMessageVO messageVO : page.getRecords()) {
+            // 把未读状态值 0[未读] 给修改掉
+            if (messageVO.getStatus() == 0) {
+                ids.add(messageVO.getId());
+            }
+        }
+
+        // 批量修改 status
+        userMessageService.updateStatusToReaded(ids);
 
         req.setAttribute("messagePageData", page);
 
@@ -223,6 +255,5 @@ public class UserController extends BaseController{
                 .put("count", count)
                 .build();
     }
-
 
 }

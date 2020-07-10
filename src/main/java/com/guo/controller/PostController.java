@@ -40,7 +40,7 @@ public class PostController extends BaseController{
         postService.putViewCount(postVO);
 
         // 1. 分页    2.文章id    3. 用户id    4. 排序
-        IPage<CommentVO> commentResults  = commentService.paging(getPage(),postVO.getId(),null,"created");
+        IPage<CommentVO> commentResults  = commentService.paging(getPagePlus(),postVO.getId(),null,"created");
 
         req.setAttribute("currentCategoryId", postVO.getCategoryId());
         req.setAttribute("post", postVO);
@@ -240,6 +240,7 @@ public class PostController extends BaseController{
             userMessageService.save(userMessage);
 
             // 即时通知作者 （WebSocket）
+            webSocketService.sendInstantMessageCountToUser(userMessage.getToUserId());
         }
 
         // 通知被 @ 的人，有人回复了你
@@ -264,6 +265,7 @@ public class PostController extends BaseController{
                 userMessageService.save(userMessage);
 
                 // 即时通知 被@ 的用户
+                webSocketService.sendInstantMessageCountToUser(userMessage.getToUserId());
             }
         }
 
@@ -292,7 +294,7 @@ public class PostController extends BaseController{
         // 本周热议 -1
         postService.incrCommentCountAndUnionForWeekRank(comment.getPostId(), false);
 
-        return Result.success("删除成功");
+        return Result.success("删除成功").action("/post/"+post.getId());
     }
 
 }

@@ -33,6 +33,9 @@ public class BaseController {
     @Autowired
     CategoryService categoryService;
 
+    @Autowired
+    WebSocketService webSocketService;
+
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal
         // 当前页 默认为 1  页面大小 默认为 2
