@@ -4,7 +4,9 @@ import cn.hutool.core.map.MapUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.guo.common.lang.Result;
+import com.guo.config.RabbitMqConfig;
 import com.guo.entity.*;
+import com.guo.search.mq.entity.PostMqIndexMessage;
 import com.guo.util.ValidationUtil;
 import com.guo.vo.CommentVO;
 import com.guo.vo.PostVO;
@@ -34,7 +36,7 @@ public class PostController extends BaseController{
     @RequestMapping("/post/{id:\\d*}")
     public String detail(@PathVariable(name = "id") Long id){
 
-        PostVO postVO = postService.selectOnePost(new QueryWrapper<>().eq("p.id", id));
+        PostVO postVO = postService.selectOnePost(new QueryWrapper<Post>().eq("p.id", id));
         Assert.notNull(postVO, "文章已被删除");
 
         postService.putViewCount(postVO);
@@ -171,6 +173,10 @@ public class PostController extends BaseController{
             postService.updateById(postTemp);
         }
 
+        // 通知消息个mq ，告知添加或更新
+        amqpTemplate.convertAndSend(RabbitMqConfig.ES_EXCHANGE, RabbitMqConfig.ES_ROUTING_KEY,
+                new PostMqIndexMessage(post.getId(), PostMqIndexMessage.CREATE_OR_UPDATE));
+
         return Result.success().action("/post/"+post.getId());
     }
 
@@ -188,6 +194,10 @@ public class PostController extends BaseController{
         // 删除相关消息、收藏
         userMessageService.removeByMap(MapUtil.of("post_id", id));
         userCollectionService.removeByMap(MapUtil.of("post_id", id));
+
+        // 通知消息个mq ，告知删除
+        amqpTemplate.convertAndSend(RabbitMqConfig.ES_EXCHANGE, RabbitMqConfig.ES_ROUTING_KEY,
+                new PostMqIndexMessage(post.getId(), PostMqIndexMessage.REMOVE));
 
         return Result.success("删除成功", null).action("/user/index");
     }

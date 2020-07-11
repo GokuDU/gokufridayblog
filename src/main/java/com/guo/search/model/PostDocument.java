@@ -1,0 +1,45 @@
+package com.guo.search.model;
+
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+import java.io.Serializable;
+import java.util.Date;
+
+
+@Data
+@Document(indexName = "post",type = "post",createIndex = true) // 索引名称、类型（type现在的版本已经被剔除） post ，createIndex = true 启动就创建
+public class PostDocument implements Serializable {  // 使用序列化保存对象到存储介质
+
+    @Id
+    private Long id;
+
+    // ik分词器
+    @Field(type = FieldType.Text,searchAnalyzer = "ik_smart",analyzer = "ik_max_word")
+    private String title;
+
+    @Field(type = FieldType.Long)
+    private Long authorId;
+
+    @Field(type = FieldType.Keyword)
+    private String authorName;
+    private String authorAvatar;
+
+    private Long categoryId;
+
+    @Field(type = FieldType.Keyword)
+    private String categoryName;
+
+    private Integer level;
+    private Boolean recomment;
+
+    private Integer commentCount;
+    private Integer viewCount;
+
+    @Field(type = FieldType.Date)
+    private Date created;
+
+}

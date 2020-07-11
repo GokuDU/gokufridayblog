@@ -1,7 +1,9 @@
-package com.guo.service;
+package com.guo.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.guo.entity.UserMessage;
+import com.guo.service.UserMessageService;
+import com.guo.service.WebSocketService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.scheduling.annotation.Async;

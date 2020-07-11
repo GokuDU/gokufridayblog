@@ -49,7 +49,7 @@
               <script id="tpl-collect" type="text/html">
                 <li>
                   <a class="jie-title" href="/post/{{d.id}}" target="_blank">{{d.title}}</a>
-                  <i>收藏于{{layui.util.timeAgo(d.created, true)}}前</i>
+                  <i>收藏于{{layui.util.timeAgo(d.created, true)}}</i>
                 </li>
               </script>
             </ul>

@@ -5,6 +5,7 @@ import com.guo.entity.UserMessage;
 import com.guo.service.*;
 import com.guo.shiro.AccountProfile;
 import org.apache.shiro.SecurityUtils;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestUtils;
 
@@ -35,6 +36,12 @@ public class BaseController {
 
     @Autowired
     WebSocketService webSocketService;
+
+    @Autowired
+    SearchService searchService;
+
+    @Autowired
+    AmqpTemplate amqpTemplate;
 
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal

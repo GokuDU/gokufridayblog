@@ -50,6 +50,25 @@ public class UserController extends BaseController{
         return "/user/home";
     }
 
+    // 查看别人主页
+    @GetMapping({"/user/{id:\\d*}","/post/user/{id:\\d*}"})
+    public String userHome(@PathVariable(name = "id") Long id) {
+
+        User user = userService.getById(id);
+
+        List<Post> posts = postService.list(new QueryWrapper<Post>()
+                .eq("user_id", id)
+                // 30天内发布的博客
+                .gt("created", DateUtil.offsetDay(new Date(), -30))
+                .orderByDesc("created")
+        );
+
+        req.setAttribute("user", user);
+        req.setAttribute("posts", posts);
+
+        return "/user/home";
+    }
+
     // 跳到基本设置页
     @GetMapping("/user/set")
     public String set() {
@@ -195,6 +214,7 @@ public class UserController extends BaseController{
          */
         IPage page = postService.page(getPage(), new QueryWrapper<Post>()
                 .inSql("id", "SELECT post_id FROM user_collection WHERE user_id = "+getProfileId())
+                .orderByDesc("created")
         );
 
 

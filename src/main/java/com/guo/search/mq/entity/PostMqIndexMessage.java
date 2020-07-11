@@ -1,0 +1,18 @@
+package com.guo.search.mq.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.io.Serializable;
+
+@Data
+@AllArgsConstructor
+public class PostMqIndexMessage implements Serializable {
+
+    // 两只类型的 type
+    public final static String CREATE_OR_UPDATE = "create_or_update";
+    public final static String REMOVE = "remove";
+
+    private Long postId;
+    private String type;
+}

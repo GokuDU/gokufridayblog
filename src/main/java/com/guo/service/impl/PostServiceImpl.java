@@ -61,7 +61,7 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
      * 博客详情
      */
     @Override
-    public PostVO selectOnePost(QueryWrapper<Object> wrapper) {
+    public PostVO selectOnePost(QueryWrapper<Post> wrapper) {
         return postMapper.selectOnePost(wrapper);
     }
 

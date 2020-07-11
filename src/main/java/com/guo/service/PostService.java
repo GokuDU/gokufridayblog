@@ -22,7 +22,7 @@ public interface PostService extends IService<Post> {
 
     IPage<PostVO> paging(Page page, Long categoryId, Long userId, Integer level, Boolean recommend, String order);
 
-    PostVO selectOnePost(QueryWrapper<Object> wrapper);
+    PostVO selectOnePost(QueryWrapper<Post> wrapper);
 
     void initWeekRank();
 
