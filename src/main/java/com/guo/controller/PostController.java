@@ -307,4 +307,64 @@ public class PostController extends BaseController{
         return Result.success("删除成功").action("/post/"+post.getId());
     }
 
+    // 点赞评论
+    @ResponseBody
+    @Transactional
+    @PostMapping("/post/zanReply")
+    public Result zanReply(Long id) {
+        Assert.notNull(id, "当前评论id为空");
+        Comment comment = commentService.getById(id);
+
+        Assert.notNull(comment, "找不到对应评论");
+        Post post = postService.getById(comment.getPostId());
+//
+//        SELECT ua.*
+//        FROM `user_action` ua
+//        WHERE ua.`user_id` = 8
+//        AND ua.`comment_id` = 1281869011889430530
+        int count = userActionService.count(new QueryWrapper<UserAction>()
+                .eq("user_id", getProfileId())
+                .eq("comment_id", id)
+        );
+
+        if (count == 0) {
+            UserAction userActionTemp = new UserAction();
+            userActionTemp.setUserId(getProfileId());
+            userActionTemp.setPostId(comment.getPostId());
+            userActionTemp.setCommentId(id);
+            userActionTemp.setPoint(1);
+            userActionTemp.setCreated(new Date());
+            userActionService.save(userActionTemp);
+
+            comment.setVoteUp(comment.getVoteUp()+1);
+            commentService.updateById(comment);
+
+            return Result.success().action("/post/"+post.getId());
+        }
+
+        UserAction userAction = userActionService.getOne(new QueryWrapper<UserAction>()
+                .eq("user_id", getProfileId())
+                .eq("comment_id", id)
+        );
+
+        if (userAction.getPoint().equals(1)) {
+                userAction.setPoint(0);
+                userAction.setModified(new Date());
+                userActionService.updateById(userAction);
+
+                comment.setVoteDown(comment.getVoteDown()+1);
+                userAction.setModified(new Date());
+                commentService.updateById(comment);
+                return Result.success().action("/post/"+post.getId());
+        } else if (userAction.getPoint().equals(0)) {
+            userAction.setPoint(1);
+            userActionService.updateById(userAction);
+
+            comment.setVoteUp(comment.getVoteUp()+1);
+            commentService.updateById(comment);
+        }
+
+        return Result.success().action("/post/"+post.getId());
+    }
+
 }

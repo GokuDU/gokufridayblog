@@ -20,6 +20,14 @@
 
     <dependencies>
 
+        <!-- tio -->
+        <!-- https://mvnrepository.com/artifact/org.t-io/tio-websocket-server -->
+        <dependency>
+            <groupId>org.t-io</groupId>
+            <artifactId>tio-websocket-server</artifactId>
+            <version>3.2.5.v20190101-RELEASE</version>
+        </dependency>
+
         <!-- elasticsearch -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

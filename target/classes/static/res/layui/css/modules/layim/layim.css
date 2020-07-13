@@ -1,9 +1,9 @@
 /**
- 
+
  @Name: layim
  @Author: 贤心
  @Site: http://layim.layui.com
- 
+
  */
 
 /* 加载就绪标志 */
@@ -71,7 +71,7 @@ body .layui-layim-chat .layui-layer-content{overflow: visible;}
 .layui-layim-list li img{position: absolute; left: 15px; top: 8px; width: 36px; height: 36px; border-radius: 100%;}
 .layui-layim-list li p{display: block; padding-right: 30px; line-height: 18px; font-size: 12px; color: #999;}
 .layui-layim-list li .layim-msg-status{display: none; position: absolute; right: 10px; bottom: 7px; padding: 0 5px; height: 16px; line-height: 16px; border-radius: 16px; text-align: center; font-size: 10px; background-color: #F74C31; color: #fff;}
-.layim-list-gray{-webkit-filter: grayscale(100%);  -ms-filter: grayscale(100%); filter: grayscale(100%); filter: gray;}
+.layim-list-gray{-webkit-filter: grayscale(100%);  filter: grayscale(100%); }
 
 .layui-layim-tool{padding: 0 10px; font-size: 0;  background-color: #F6F6F6; border-radius:0 0 2px 2px;}
 .layui-layim-tool li{position: relative; width: 48px; height: 37px; line-height: 40px; text-align: center; font-size: 22px; cursor: pointer;}
@@ -242,7 +242,7 @@ body .layui-layim-contextmenu  .layui-layer-content{padding:0; background-color:
 .layim-tab-content,
 .layui-layim-face ul{margin-bottom: 0;}
 .layim-tab-content li h5{margin-top: 0; margin-bottom: 0;}
-,.layui-layim-face img{vertical-align: bottom;}
+.layui-layim-face img{vertical-align: bottom;}
 .layim-chat-other span{color: #444;}
 .layim-chat-other span cite{padding: 0 15px; color: #999;}
 .layim-chat-other:hover{text-decoration: none;}

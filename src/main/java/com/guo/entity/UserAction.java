@@ -23,7 +23,7 @@ public class UserAction extends BaseEntity {
     /**
      * 用户ID
      */
-    private String userId;
+    private Long userId;
 
     /**
      * 动作类型
@@ -38,12 +38,12 @@ public class UserAction extends BaseEntity {
     /**
      * 关联的帖子ID
      */
-    private String postId;
+    private Long postId;
 
     /**
      * 关联的评论ID
      */
-    private String commentId;
+    private Long commentId;
 
 
 }

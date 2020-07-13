@@ -43,6 +43,12 @@ public class BaseController {
     @Autowired
     AmqpTemplate amqpTemplate;
 
+    @Autowired
+    UserActionService userActionService;
+
+    @Autowired
+    ChatService chatService;
+
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal
         // 当前页 默认为 1  页面大小 默认为 2

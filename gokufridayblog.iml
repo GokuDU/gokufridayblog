@@ -25,6 +25,14 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-websocket-server:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-websocket-common:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-http-common:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-core:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-utils:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.github.ben-manes.caffeine:caffeine:2.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.t-io:tio-http-server:3.2.5.v20190101-RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: com.esotericsoftware:reflectasm:1.11.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-elasticsearch:2.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-logging:2.1.2.RELEASE" level="project" />

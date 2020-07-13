@@ -93,6 +93,8 @@
 
                         <#list commentPageData.records as comment>
 
+                            <input type="hidden" class="commentId" name="commentId" value="${comment.id}">
+
                             <li data-id="${comment.id}" class="jieda-daan">
                                 <a name="${comment.id}"></a>
                                 <div class="detail-about detail-about-reply">
@@ -124,7 +126,7 @@
 
                                   <span class="jieda-zan zanok" type="zan">
                                     <i class="iconfont icon-zan"></i>
-                                    <em>${comment.voteUp}</em>
+                                    <em>${comment.voteUp-comment.voteDown}</em>
                                   </span>
 
                                    <span type="reply">

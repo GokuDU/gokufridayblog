@@ -194,7 +194,6 @@ public class UserController extends BaseController{
                 .orderByDesc("created")
         );
 
-
         return Result.success(page);
     }
 

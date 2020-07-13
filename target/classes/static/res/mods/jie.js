@@ -140,18 +140,19 @@ layui.define('fly', function(exports){
     }
   }();
 
-  //解答操作
+  //回答操作
   gather.jiedaActive = {
     zan: function(li){ //赞
       var othis = $(this), ok = othis.hasClass('zanok');
-      fly.json('/api/jieda-zan/', {
+      fly.json('/post/zanReply/', {
         ok: ok
         ,id: li.data('id')
       }, function(res){
         if(res.status === 0){
           var zans = othis.find('em').html()|0;
           othis[ok ? 'removeClass' : 'addClass']('zanok');
-          othis.find('em').html(ok ? (--zans) : (++zans));
+          // othis.find('em').html(ok ? (--zans) : (++zans));
+          othis.find('em').html(ok ? (++zans) : (--zans));
         } else {
           layer.msg(res.msg);
         }
