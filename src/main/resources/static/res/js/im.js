@@ -9,7 +9,7 @@ tio.ws = function ($,layim) {  // 构造方法 传过来的参数： layui.jquer
 
     // 建立连接
     this.connect = function () {
-        var url = "ws://localhost:9981";
+        var url = "ws://localhost:9981?userId=" + self.userId;
         var socket = new WebSocket(url);
 
         // 设置全局 socket
@@ -27,6 +27,11 @@ tio.ws = function ($,layim) {  // 构造方法 传过来的参数： layui.jquer
         socket.onmessage = function (res) {
             console.log("接收到了消息========>>");
             console.log(res);
+
+            var msgBody = eval('('+ res.data +')');   // json数据转为对象
+            if (msgBody.emit === 'chatMessage') {
+                layim.getMessage(msgBody.data);
+            }
         };
     };
 
@@ -40,6 +45,8 @@ tio.ws = function ($,layim) {  // 构造方法 传过来的参数： layui.jquer
             success: function (res) {
                 self.group = res.data.group;
                 self.mine = res.data.mine;
+
+                self.userId = self.mine.id;
             }
         });
 

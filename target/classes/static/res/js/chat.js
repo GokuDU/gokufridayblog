@@ -14,17 +14,18 @@ layui.use('layim', function(layim){
 
     layim.config({
         brief: true //是否简约模式（如果true则不显示主面板）
+        //以下为我们内置的模版，也可以换成你的任意页面。若不开启，剔除该项即可
+        ,chatLog: layui.cache.dir + 'css/modules/layim/html/chatlog.html'
     });
 
     // 初始化 构造方法传入 ($, layim)
     var tiows = new tio.ws($, layim);
 
+    // 获取个人、群聊信息，并打开聊天窗口
+    tiows.openChatWindow();
+
     // 建立连接ws
     tiows.connect();
-
-    // 获取个人、群聊信息，并打开聊天窗口
-     tiows.openChatWindow();
-
     // 历史聊天信息回显
 
 

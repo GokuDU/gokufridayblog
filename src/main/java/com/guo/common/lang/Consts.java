@@ -11,11 +11,11 @@ public class Consts {
     @Value("${file.upload.dir}")
     private String uploadDir;
 
-    // 群聊Id
-    public final static Long IM_DEFAULT_GROUP_ID = 9999L;
     public final static Long IM_DEFAULT_USER_ID = 9999L;
 
-    public final static String IM_GROUP_NAME = "homework-group-study";
+    // 群聊Id
+    public final static Long IM_GROUP_ID = 9999L;
+    public final static String IM_GROUP_NAME = "gokufriday-blog-group";
 
     // MsgHandler 的 type  消息类型
     public final static String IM_MESS_TYPE_PING = "pingMessage";

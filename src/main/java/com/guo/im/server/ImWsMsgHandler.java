@@ -2,10 +2,12 @@ package com.guo.im.server;
 
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.json.JSONUtil;
+import com.guo.common.lang.Consts;
 import com.guo.im.handler.MsgHandler;
 import com.guo.im.handler.factory.MsgHandlerfactory;
 import lombok.extern.slf4j.Slf4j;
 import org.tio.core.ChannelContext;
+import org.tio.core.Tio;
 import org.tio.http.common.HttpRequest;
 import org.tio.http.common.HttpResponse;
 import org.tio.websocket.common.WsRequest;
@@ -28,6 +30,14 @@ public class ImWsMsgHandler implements IWsMsgHandler {
      */
     @Override
     public HttpResponse handshake(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
+
+        String userId = httpRequest.getParam("userId");
+
+        // 绑定个人通道
+        Tio.bindUser(channelContext, userId);
+        log.info("{}-------------->正在握手----->"+userId);
+
+
         return httpResponse;
     }
 
@@ -40,7 +50,9 @@ public class ImWsMsgHandler implements IWsMsgHandler {
      */
     @Override
     public void onAfterHandshaked(HttpRequest httpRequest, HttpResponse httpResponse, ChannelContext channelContext) throws Exception {
-
+        // 绑定群聊通道   IM_GROUP_NAME = "gokufriday-blog-group";
+        Tio.bindGroup(channelContext, Consts.IM_GROUP_NAME);
+        log.info("{}-------------->已绑定群----->"+channelContext.getId());
     }
 
     /**
@@ -76,7 +88,9 @@ public class ImWsMsgHandler implements IWsMsgHandler {
         String data = MapUtil.getStr(map, "data");
 
         MsgHandler msgHandler = MsgHandlerfactory.getMsgHandler(type);
+
         // 处理消息
+        msgHandler.handler(data,wsRequest,channelContext);
 
         return null;
     }

@@ -57,6 +57,7 @@ public class ShiroConfig {
         // 登录不需要权限
         hashMap.put("/login", "anon");
         hashMap.put("/webSocket", "anon");
+        hashMap.put("/res/images", "anon");
 
         // 需要登录
         hashMap.put("/user/home", "myAuth");

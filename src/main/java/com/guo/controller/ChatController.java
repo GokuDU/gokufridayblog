@@ -23,7 +23,7 @@ public class ChatController extends BaseController{
         group.put("name", "社区群聊");
         group.put("type", "group");
         group.put("avatar", "http://pic.90sjimg.com/design/00/67/59/63/58e8ebdd5c471.png");
-        group.put("id", Consts.IM_DEFAULT_GROUP_ID);
+        group.put("id", Consts.IM_GROUP_ID);
         group.put("members", 0);
 
         ImUser imUser = chatService.getCurrentUser();

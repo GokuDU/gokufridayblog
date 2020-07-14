@@ -5,46 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf235a25-e802-49e5-88eb-875b580e2106" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_esotericsoftware_reflectasm_1_11_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_ben_manes_caffeine_caffeine_2_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_core_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_http_common_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_http_server_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_utils_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_websocket_common_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_t_io_tio_websocket_server_3_2_5_v20190101_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/config/ImServerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/factory/MsgHandlerfactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImServerStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/service/ChatService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/service/impl/ChatServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/filter/LimitMyChannelContextFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatInMess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatOutMess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImMess.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImTo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/res/images/oneMan.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gokufridayblog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/gokufridayblog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/controller/BaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/entity/UserAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/entity/UserAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/config/ShiroConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/config/ShiroConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/res/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/res/js/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/res/js/im.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/res/js/im.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/res/layui/css/modules/layim/layim.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/res/layui/css/modules/layim/layim.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/res/mods/jie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/res/mods/jie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/inc/layout.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/inc/layout.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/post/detail.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/post/detail.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/res/js/chat.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/res/js/chat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/res/js/im.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/res/js/im.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/res/mods/jie.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/res/mods/jie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/inc/layout.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/inc/layout.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/post/detail.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/post/detail.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -103,11 +82,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+            <state relative-caret-position="289">
+              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -115,21 +94,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/im.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            <state relative-caret-position="391">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
               <folding>
-                <element signature="e#208#621#0" />
-                <element signature="e#687#1004#0" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="59" column="16" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="16" />
+            <state relative-caret-position="119">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="60" column="111" selection-start-line="60" selection-start-column="111" selection-end-line="60" selection-end-column="111" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/filter/LimitMyChannelContextFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -151,7 +159,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>username</find>
       <find>email</find>
       <find>upload-img</find>
       <find>fly-admin-box</find>
@@ -181,6 +188,7 @@
       <find>collection</find>
       <find>post</find>
       <find>layui-layer-content</find>
+      <find>layim-chat-user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -189,14 +197,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/service/WebSocketServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/config/WebSocketConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/GokufridayblogApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/search/repository/PostRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/controller/IndexController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/user/set.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/search/model/PostDocument.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/inc/right.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/search.ftl" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/inc/header.ftl" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/config/MvcConfig.java" />
@@ -221,25 +221,33 @@
         <option value="$PROJECT_DIR$/src/main/java/com/guo/config/imServerConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/ImWsMsgHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/MsgHandlerImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/factory/MsgHandlerfactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImServerStart.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/inc/layout.ftl" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/config/ImServerConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/search/mq/entity/PostMqIndexMessage.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/service/ChatService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/res/layui/css/modules/layim/layim.css" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/res/js/chat.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImServerStarter.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/res/js/im.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatUserType.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImTo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/config/ShiroConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/guo/service/impl/ChatServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImMess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatInMess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatOutMess.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/res/js/im.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/filter/LimitMyChannelContextFilter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/res/js/chat.js" />
       </list>
     </option>
   </component>
@@ -302,8 +310,9 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="22" />
+    <option name="y" value="10" />
     <option name="width" value="1276" />
     <option name="height" value="772" />
   </component>
@@ -315,8 +324,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -377,8 +386,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="guo" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
@@ -421,7 +429,31 @@
               <item name="guo" type="462c0819:PsiDirectoryNode" />
               <item name="im" type="462c0819:PsiDirectoryNode" />
               <item name="handler" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="guo" type="462c0819:PsiDirectoryNode" />
+              <item name="im" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="guo" type="462c0819:PsiDirectoryNode" />
+              <item name="im" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
@@ -460,6 +492,17 @@
               <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="guo" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -487,43 +530,7 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gokufridayblog" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="layui" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="modules" type="462c0819:PsiDirectoryNode" />
-              <item name="layim" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gokufridayblog" type="b2602c69:ProjectViewProjectNode" />
@@ -568,7 +575,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1594649480478" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1594713627003" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="database.console.LAST_STATE" value="false" />
@@ -582,12 +589,6 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.guo.service.impl" />
-      <recent name="com.guo.im.handler.impl" />
-      <recent name="com.guo.service" />
-      <recent name="com.guo.vo" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.guo.service.impl" />
     </key>
@@ -597,18 +598,24 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.guo.service.impl" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\templates\user" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\static\res\images" />
       <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\static\post\res" />
       <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\templates" />
       <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\templates\post" />
       <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\java\com\guo\util" />
-      <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\templates\auth" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.guo.im.handler.impl" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\project\aaSpringBootProject\gokufridayblog\src\main\resources\templates\user" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.guo.service.impl" />
+      <recent name="com.guo.im.handler.impl" />
+      <recent name="com.guo.service" />
+      <recent name="com.guo.vo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -707,6 +714,8 @@
       <workItem from="1594529271053" duration="16269000" />
       <workItem from="1594565771189" duration="13961000" />
       <workItem from="1594639919768" duration="10046000" />
+      <workItem from="1594669190888" duration="5396000" />
+      <workItem from="1594702437681" duration="9131000" />
     </task>
     <servers />
   </component>
@@ -719,7 +728,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="331586000" />
+    <option name="totallyTimeSpent" value="346113000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -731,10 +740,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1456" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1456" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.22492836" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49614793" visible="true" weight="0.26217765" />
       <window_info id="Structure" order="1" sideWeight="0.50385207" side_tool="true" weight="0.2598684" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -744,7 +753,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32884097" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928367" weight="0.4218329" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49928367" visible="true" weight="0.35983828" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26415095" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -779,121 +788,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://E:/maven/repository/org/springframework/amqp/spring-amqp/2.1.3.RELEASE/spring-amqp-2.1.3.RELEASE-sources.jar!/org/springframework/amqp/core/AmqpTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-85">
-          <caret line="98" column="9" selection-start-line="98" selection-start-column="9" selection-end-line="98" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="24" column="11" selection-start-line="24" selection-start-column="11" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/mapper/PostMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="26" column="67" selection-start-line="26" selection-start-column="67" selection-end-line="26" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/service/impl/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
-          <folding>
-            <element signature="e#1915#1916#0" expanded="true" />
-            <element signature="e#1971#1972#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/config/RabbitMqConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-103">
-          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#640#641#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/maven/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25-sources.jar!/org/slf4j/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="367" column="16" selection-start-line="367" selection-start-column="16" selection-end-line="367" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/controller/IndexController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-          <folding>
-            <element signature="e#460#517#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/vo/PostVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/user/index.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="51" column="63" selection-start-line="51" selection-start-column="63" selection-end-line="51" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/controller/AdminController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="33" column="57" selection-start-line="33" selection-start-column="57" selection-end-line="33" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/service/impl/UserCollectionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/mods/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="494" column="22" selection-start-line="494" selection-start-column="22" selection-end-line="494" selection-end-column="22" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#span#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/layui/lay/modules/mobile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16921" selection-start-line="1" selection-start-column="16921" selection-end-line="1" selection-end-column="16921" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/vo/CommentLikeVO.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/vo/CommentVO.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -997,13 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/maven/repository/org/t-io/tio-core/3.2.5.v20190101-RELEASE/tio-core-3.2.5.v20190101-RELEASE.jar!/org/tio/core/GroupContext.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -1022,20 +909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="37" column="14" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1104,17 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/factory/MsgHandlerfactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#769#770#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/css/global.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1126,23 +988,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="246" column="58" lean-forward="true" selection-start-line="246" selection-start-column="58" selection-end-line="246" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1164,19 +1009,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/service/impl/ChatServiceImpl.java">
+    <entry file="jar://E:/maven/repository/cn/hutool/hutool-all/4.1.17/hutool-all-4.1.17-sources.jar!/cn/hutool/core/map/MapUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="31" column="117" selection-start-line="31" selection-start-column="117" selection-end-line="31" selection-end-column="117" />
+        <state relative-caret-position="238">
+          <caret line="729" column="25" selection-start-line="729" selection-start-column="25" selection-end-line="729" selection-end-column="25" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#16455#16456#0" expanded="true" />
+            <element signature="e#16496#16497#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/MsgHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/repository/org/t-io/tio-websocket-common/3.2.5.v20190101-RELEASE/tio-websocket-common-3.2.5.v20190101-RELEASE.jar!/org/tio/websocket/common/WsResponse.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/repository/org/t-io/tio-websocket-common/3.2.5.v20190101-RELEASE/tio-websocket-common-3.2.5.v20190101-RELEASE.jar!/org/tio/websocket/common/WsPacket.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="71" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/server/ImServerStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="136">
           <caret line="26" column="54" selection-start-line="26" selection-start-column="54" selection-end-line="26" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1184,38 +1058,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/common/lang/Consts.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/factory/MsgHandlerfactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/im.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+        <state relative-caret-position="66">
+          <caret line="20" column="41" selection-start-line="20" selection-start-column="41" selection-end-line="20" selection-end-column="41" />
           <folding>
-            <element signature="e#208#621#0" />
-            <element signature="e#687#1004#0" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#726#727#0" expanded="true" />
+            <element signature="e#769#770#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/chat.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/config/ShiroConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        <state relative-caret-position="204">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="32" selection-end-line="59" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/service/impl/ChatServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="31" column="117" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="117" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/PingMsgHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImTo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatInMess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/repository/org/t-io/tio-core/3.2.5.v20190101-RELEASE/tio-core-3.2.5.v20190101-RELEASE.jar!/org/tio/core/ChannelContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/repository/org/t-io/tio-core/3.2.5.v20190101-RELEASE/tio-core-3.2.5.v20190101-RELEASE.jar!/org/tio/core/Tio.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="503" column="23" selection-start-line="503" selection-start-column="23" selection-end-line="503" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/maven/repository/org/t-io/tio-core/3.2.5.v20190101-RELEASE/tio-core-3.2.5.v20190101-RELEASE-sources.jar!/org/tio/core/Tio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="980" column="23" selection-start-line="980" selection-start-column="23" selection-end-line="980" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/layui/lay/modules/layim.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="9470" selection-start-line="1" selection-start-column="9470" selection-end-line="1" selection-end-column="9470" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/message/ChatOutMess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="19" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/filter/LimitMyChannelContextFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/vo/ImMess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/controller/ChatController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="40" selection-start-line="28" selection-start-column="40" selection-end-line="28" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/server/ImWsMsgHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="59" column="16" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="16" />
+        <state relative-caret-position="119">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/guo/im/handler/impl/ChatMsgHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="60" column="111" selection-start-line="60" selection-start-column="111" selection-end-line="60" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/im.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/res/js/chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
         </state>
       </provider>
     </entry>
