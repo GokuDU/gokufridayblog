@@ -19,4 +19,5 @@ public interface UserService extends IService<User> {
 
     AccountProfile login(String username, String password);
 
+    void sendMail(User user);
 }

@@ -12,6 +12,10 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.omg.CORBA.portable.UnknownException;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -26,6 +30,10 @@ import java.util.Date;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+
+
+    @Autowired
+    JavaMailSenderImpl mailSender;
 
     // 完成注册
     @Override
@@ -90,5 +98,20 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         BeanUtils.copyProperties(user, accountProfile);
 
         return accountProfile;
+    }
+
+    @Override
+    @Async
+    public void sendMail(User user) {
+
+        SimpleMailMessage message = new SimpleMailMessage();
+
+        message.setSubject("注册成功");
+        message.setText("gokufriday博客社区注册成功，你可以通过用户名"+user.getUsername()+"登录社区");
+
+        message.setTo(user.getEmail());
+        message.setFrom("guo1561413067@163.com");
+
+        mailSender.send(message);
     }
 }

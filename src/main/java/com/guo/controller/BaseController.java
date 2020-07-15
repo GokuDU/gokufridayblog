@@ -7,6 +7,7 @@ import com.guo.shiro.AccountProfile;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.web.bind.ServletRequestUtils;
 
 import javax.servlet.http.HttpServletRequest;
@@ -48,6 +49,7 @@ public class BaseController {
 
     @Autowired
     ChatService chatService;
+
 
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal

@@ -9,6 +9,7 @@ import com.guo.util.ValidationUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,8 +19,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.imageio.ImageIO;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Controller
 public class AuthController extends BaseController{
@@ -104,6 +109,14 @@ public class AuthController extends BaseController{
         if (validResult.hasErrors()) {
             return Result.fail(validResult.getErrors());
         }
+        // 校验用户名
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9-]{4,20}$");
+        Matcher m = pattern.matcher(user.getUsername());
+        // 不匹配
+        if (!m.matches()) {
+            return Result.fail("请输入4位以上、20位以下的字母或数字");
+        }
+
         // 校验密码
         if (! user.getPassword().equals(repass)) {
             return Result.fail("两次输入密码不一致");
@@ -118,6 +131,9 @@ public class AuthController extends BaseController{
 
         // 完成注册
         Result result = userService.register(user);
+
+        // 发送邮箱
+        userService.sendMail(user);
 
         return result.action("/login");
     }

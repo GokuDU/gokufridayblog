@@ -28,6 +28,11 @@ spring:
     password: guest
     host: localhost
     port: 5672
+# 邮件
+  mail:
+    username: guo1561413067@163.com
+    password: VXDUKEHFKHMCKHRT
+    host: smtp.163.com
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml
 file:

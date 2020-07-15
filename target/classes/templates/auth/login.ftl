@@ -14,7 +14,7 @@
           <div class="layui-form layui-form-pane">
             <form method="post">
               <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">昵称</label>
+                <label for="L_username" class="layui-form-label">用户名</label>
                 <div class="layui-input-inline">
                   <input type="text" id="L_username" name="username" required lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
