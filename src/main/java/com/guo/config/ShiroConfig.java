@@ -78,7 +78,8 @@ public class ShiroConfig {
         hashMap.put("/post/edit", "myAuth");
         hashMap.put("/post/submit", "myAuth");
         hashMap.put("/post/delete", "myAuth");
-        hashMap.put("/post/reply", "myAuth");
+        hashMap.put("/post/reply/", "myAuth");
+        hashMap.put("/post/zanReply/", "myAuth");
 
         filterFactoryBean.setFilterChainDefinitionMap(hashMap);
 

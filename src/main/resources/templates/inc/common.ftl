@@ -36,15 +36,15 @@
 
 <#macro postlisting post>
     <li>
-        <a href="user/${post.authorId}" class="fly-avatar">
+        <a href="/user/${post.authorId}" class="fly-avatar">
             <img src="${post.authorAvatar}" alt="${post.authorName}">
         </a>
         <h2>
             <a class="layui-badge">${post.categoryName}</a>
-            <a href="post/${post.id}">${post.title}</a>
+            <a href="/post/${post.id}">${post.title}</a>
         </h2>
         <div class="fly-list-info">
-            <a href="user/${post.authorId}" link>
+            <a href="/user/${post.authorId}" link>
                 <cite>${post.authorName}</cite>
             </a>
             <#--<span>${post.created?string("yyyy-MM-dd")}</span>-->

@@ -6,12 +6,14 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.guo.common.lang.Result;
 import com.guo.entity.Post;
 import com.guo.entity.User;
 import com.guo.entity.UserMessage;
 import com.guo.shiro.AccountProfile;
 import com.guo.util.UploadUtil;
+import com.guo.vo.CommentVO;
 import com.guo.vo.UserMessageVO;
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ public class UserController extends BaseController{
     @Autowired
     UploadUtil uploadUtil;
 
-    // 跳到我的主页
+    // 跳到我的主页 查看个人博客，个人评论
     @GetMapping("/user/home")
     public String home() {
 
@@ -44,8 +46,12 @@ public class UserController extends BaseController{
                 .orderByDesc("created")
         );
 
+        // 1. 分页    2.文章id    3. 用户id    4. 排序
+        IPage<CommentVO> commentResults  = commentService.paging(new Page(1, 100),null,getProfileId(),"created");
+
         req.setAttribute("user", user);
         req.setAttribute("posts", posts);
+        req.setAttribute("commentData", commentResults);
 
         return "/user/home";
     }
@@ -114,6 +120,7 @@ public class UserController extends BaseController{
         userTemp.setUsername(user.getUsername());
         userTemp.setGender(user.getGender());
         userTemp.setSign(user.getSign());
+        userTemp.setMobile(user.getMobile());
         userService.updateById(userTemp);
 
         // 因为用户登录数据 存放在 AccountProfile （在头栏目填充数据） ，需要更新这个数据

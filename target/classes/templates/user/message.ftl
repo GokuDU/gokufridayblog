@@ -34,16 +34,29 @@
                   </#if>
 
                   <#if message.type == 1>
-                    ${message.fromUserName}
+                    <a href="/user/${message.fromUserId}">
+                        ${message.fromUserName}
+                    </a>
                     -->评论了你的文章：<a href="/post/${message.postId}"> ${message.postTitle} </a>
                     --> 内容为：${message.content}
                   </#if>
 
                   <#if message.type == 2>
-                    ${message.fromUserName}
+                    <a href="/user/${message.fromUserId}">
+                      ${message.fromUserName}
+                    </a>
                     -->回复了你：${message.content}
                     -->文章是：<a href="/post/${message.postId}"> ${message.postTitle} </a>
                   </#if>
+
+                  <#if message.type == 3>
+                    <a href="/user/${message.fromUserId}">
+                      ${message.fromUserName}
+                    </a>
+                    -->点赞了你的评论：${message.content}
+                    -->文章是：<a href="/post/${message.postId}"> ${message.postTitle} </a>
+                  </#if>
+
 
                   </blockquote>
                   <p>

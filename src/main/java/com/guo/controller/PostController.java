@@ -3,6 +3,7 @@ package com.guo.controller;
 import cn.hutool.core.map.MapUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.guo.common.lang.Consts;
 import com.guo.common.lang.Result;
 import com.guo.config.RabbitMqConfig;
 import com.guo.entity.*;
@@ -10,6 +11,7 @@ import com.guo.search.mq.entity.PostMqIndexMessage;
 import com.guo.util.ValidationUtil;
 import com.guo.vo.CommentVO;
 import com.guo.vo.PostVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
@@ -19,17 +21,23 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
+@Slf4j
 @Controller
 public class PostController extends BaseController{
 
-    // :\d*  指定接收数字参数类型
+    // :\d*  指定接收数字参数类型 (分类博客)
     @RequestMapping("/category/{id:\\d*}")
     public String category(@PathVariable(name = "id") Long id){
 
         int pn = ServletRequestUtils.getIntParameter(req, "pn", 1);
 
-        req.setAttribute("pn", pn);
+        // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
+        IPage pageResults = postService.paging(getPagePlus(),id,null,null,null,"created");
+
         req.setAttribute("currentCategoryId", id);
+        req.setAttribute("categoryData", pageResults);
+
+        log.info("categryId----------->"+ id);
         return "post/category";
     }
 
@@ -312,6 +320,8 @@ public class PostController extends BaseController{
     @Transactional
     @PostMapping("/post/zanReply")
     public Result zanReply(Long id) {
+//        Assert.notNull(getProfileId(), "请登录之后再点赞");
+
         Assert.notNull(id, "当前评论id为空");
         Comment comment = commentService.getById(id);
 
@@ -328,6 +338,7 @@ public class PostController extends BaseController{
         );
 
         if (count == 0) {
+
             UserAction userActionTemp = new UserAction();
             userActionTemp.setUserId(getProfileId());
             userActionTemp.setPostId(comment.getPostId());
@@ -338,6 +349,35 @@ public class PostController extends BaseController{
 
             comment.setVoteUp(comment.getVoteUp()+1);
             commentService.updateById(comment);
+
+            // 点赞通知
+            Long commentUserId = comment.getUserId();
+
+            User commentUser = userService.getOne(new QueryWrapper<User>()
+                    .eq("id", commentUserId)
+            );
+
+            // 自己点赞自己不通知
+            if (commentUser != null && commentUserId != getProfileId()) {
+                UserMessage userMessage = new UserMessage();
+                userMessage.setPostId(comment.getPostId());
+                userMessage.setCommentId(comment.getId());
+                userMessage.setContent(comment.getContent());
+                userMessage.setFromUserId(getProfileId());
+                userMessage.setToUserId(commentUserId);
+                // 消息类型 ： 0 系统消息   1 评论文章   2 回复评论  3 点赞
+                userMessage.setType(3);
+                userMessage.setCreated(new Date());
+                // 未读消息 0
+                userMessage.setStatus(0);
+                userMessageService.save(userMessage);
+
+                userActionTemp.setAction(Consts.LIKE_COMMENT);
+                userActionService.updateById(userActionTemp);
+
+                // 即时通知 被点赞 的用户
+                webSocketService.sendInstantMessageCountToUser(userMessage.getToUserId());
+            }
 
             return Result.success().action("/post/"+post.getId());
         }

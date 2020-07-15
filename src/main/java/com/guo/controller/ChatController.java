@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -33,6 +34,13 @@ public class ChatController extends BaseController{
                 .put("group",group)
                 .put("mine", imUser)
                 .map());
+    }
+
+    // 历史记录
+    @GetMapping("/getGroupHistoryMsg")
+    public Result getGroupHistoryMsg() {
+        List<Object> historyMsg = chatService.getGroupHistoryMsg(500);
+        return Result.success(historyMsg);
     }
 
 }

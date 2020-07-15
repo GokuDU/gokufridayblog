@@ -42,16 +42,25 @@ public class PostServiceImpl extends ServiceImpl<PostMapper, Post> implements Po
      * 博客分页
      */
     @Override
-    public IPage<PostVO> paging(Page page, Long categoryId, Long userId, Integer level, Boolean recommend, String order) {
+    public IPage<PostVO> paging(Page page, Long categoryId, Long userId, Integer level, Boolean booleanRecommend, String order) {
 
         if(level == null)
             level = -1;
+
+        int recommend = 0;
+        if (booleanRecommend == null) {
+            recommend = -1;
+        } else if (booleanRecommend == true) {
+            recommend = 1;
+        }
 
         QueryWrapper wrapper = new QueryWrapper<Post>()
                 .eq(categoryId != null,"category_id", categoryId)
                 .eq(userId != null,"user_id", userId)   // 当这个id不为空的时候 才有后面的条件
                 .eq(level == 0,"level", 0)          // 这里想让数值越大越置顶 ， 默认为0
                 .gt(level > 0,"level", 0)       //  level大于0  置顶
+                .eq(recommend == 0,"recommend", 0)          // recommend  默认为0
+                .gt(recommend > 0,"recommend", 0)       //  recommend大于0  精华
                 .orderByDesc(order != null,order);      // order是Controller传进来的对应博客表的创建时间 created
 
         return postMapper.selectPosts(page,wrapper);

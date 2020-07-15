@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController extends BaseController{
 
+    // 首页
     @RequestMapping({"","/","/index"})
     public String index(){
         // request.getParameter(name) == null   return defaultVal
@@ -16,6 +17,30 @@ public class IndexController extends BaseController{
 
         // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
         IPage pageResults = postService.paging(getPage(),null,null,null,null,"created");
+
+        req.setAttribute("pageData", pageResults);
+        req.setAttribute("currentCategoryId", 0);
+        return "index";
+    }
+
+    // 精华
+    @RequestMapping("/betterPostIndex")
+    public String betterPostIndex(){
+
+        // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
+        IPage pageResults = postService.paging(getPage(),null,null,null,true,"created");
+
+        req.setAttribute("pageData", pageResults);
+        req.setAttribute("currentCategoryId", 0);
+        return "index";
+    }
+
+    // 热度
+    @RequestMapping("/hostPostIndex")
+    public String hostPostIndex(){
+
+        // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
+        IPage pageResults = postService.paging(getPage(),null,null,null,null,"comment_count");
 
         req.setAttribute("pageData", pageResults);
         req.setAttribute("currentCategoryId", 0);

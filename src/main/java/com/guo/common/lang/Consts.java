@@ -11,6 +11,8 @@ public class Consts {
     @Value("${file.upload.dir}")
     private String uploadDir;
 
+    public final static String LIKE_COMMENT = "已点赞过";
+
     public final static Long IM_DEFAULT_USER_ID = 9999L;
 
     // 群聊Id

@@ -9,7 +9,11 @@ import com.guo.im.handler.message.ChatOutMess;
 import com.guo.im.vo.ImMess;
 import com.guo.im.vo.ImTo;
 import com.guo.im.vo.ImUser;
+import com.guo.service.ChatService;
+import com.guo.util.SpringUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.tio.core.ChannelContext;
 import org.tio.core.Tio;
 import org.tio.websocket.common.WsRequest;
@@ -19,6 +23,7 @@ import java.util.Date;
 
 @Slf4j
 public class ChatMsgHandler implements MsgHandler {
+
     @Override
     public void handler(String data, WsRequest wsRequest, ChannelContext channelContext) {
         // 处理 data 解析
@@ -59,5 +64,9 @@ public class ChatMsgHandler implements MsgHandler {
         channelContextFilter.setCurrentContext(channelContext);
 
         Tio.sendToGroup(channelContext.getGroupContext(), Consts.IM_GROUP_NAME, wsResponse,channelContextFilter);
+
+        // 保存群聊历史记录
+        ChatService chatService = (ChatService) SpringUtil.getBean("chatService");
+        chatService.setGroupHistoryMsg(imMess);
     }
 }

@@ -51,9 +51,9 @@ public class BaseController {
 
     public Page getPage() {
         // request.getParameter(name) == null   return defaultVal
-        // 当前页 默认为 1  页面大小 默认为 2
+        // 当前页 默认为 1  页面大小 默认为 3
         int pn = ServletRequestUtils.getIntParameter(req, "pn",1);
-        int size = ServletRequestUtils.getIntParameter(req, "size",2);
+        int size = ServletRequestUtils.getIntParameter(req, "size",3);
         return new Page(pn,size);
     }
 

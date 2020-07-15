@@ -43,7 +43,7 @@ public class UserMessage extends BaseEntity {
     private String content;
 
     /**
-     * 消息类型  0 系统消息   1 评论文章   2 回复评论
+     * 消息类型  0 系统消息   1 评论文章   2 回复评论  3 点赞
      */
     private Integer type;
 

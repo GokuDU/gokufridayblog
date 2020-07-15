@@ -17,15 +17,28 @@
       -->
     </h1>
 
-    <p style="padding: 10px 0; color: #5FB878;">认证信息：layui 作者</p>
-
-    <p class="fly-home-info">
-      <i class="iconfont icon-kiss" title="飞吻"></i><span style="color: #FF7200;">66666 飞吻</span>
-      <i class="iconfont icon-shijian"></i><span>${timeAgo(user.created)}</span>
-      <i class="iconfont icon-chengshi"></i><span>${user.email}</span>
+    <p style="padding: 10px 0; color: #5FB878;">
+      <#if user.sign == null>
+        <i class="iconfont icon-biaoqing"></i> <span>个性签名：（ 这个人好懒，什么也没留下 ） </span>
+        <#else >
+          <i class="iconfont icon-biaoqing"></i> <span>个性签名： ${user.sign} </span>
+      </#if>
     </p>
-
-    <p class="fly-home-sign">（${user.sign!'这个人好懒，什么也没留下!'}）</p>
+    <p style="padding: 5px 0; color: #5FB878;">
+        <i class="iconfont icon-chengshi"></i><span>${user.email}</span>
+    </p>
+    <p class="fly-home-info" style="padding: 5px 0;">
+        <#if user.mobile != null>
+            <i class="iconfont icon-jiaoliu"></i><span>手机号：${user.mobile}</span>
+        </#if>
+    </p>
+    <p class="fly-home-info" style="padding: 5px 0;">
+       <i class="iconfont icon-shijian"></i>
+        <span>
+            加入社区：
+            <span style="color: #FF7200;">${timeAgo(user.created)}</span>
+        </span>
+    </p>
 
     <div class="fly-sns" data-user="">
       <a href="javascript:;" class="layui-btn layui-btn-primary fly-imActive" data-type="addFriend">加为好友</a>
@@ -37,6 +50,7 @@
   <div class="layui-container">
     <div class="layui-row layui-col-space15">
       <div class="layui-col-md6 fly-home-jie">
+
         <div class="fly-panel">
           <h3 class="fly-panel-title">${post.username} 最近发表的博客</h3>
           <ul class="jie-row">
@@ -64,13 +78,33 @@
         </div>
       </div>
 
-        <div class="layui-col-md6 fly-home-da">
+        <div class="layui-col-md6 fly-home-jie">
           <div class="fly-panel">
+
             <h3 class="fly-panel-title">${user.username} 最近的回答</h3>
-            <ul class="home-jieda">
-              <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><span>没有回答任何问题</span></div>
+
+            <ul class="jie-row">
+
+              <#list commentData.records as comment>
+                <li>
+                    <a href="/post/${comment.postId}" class="jie-title"> ${comment.content}</a>
+
+
+                    <em class="layui-hide-xs">
+                        <i>${timeAgo(comment.created)}</i>
+                    </em>
+                </li>
+              </#list>
+
+              <#if !posts>
+                <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;">
+                  <i style="font-size:14px;">没有回答任何问题</i>
+                </div>
+              </#if>
+
+              <!-- <div class="fly-none" style="min-height: 50px; padding:30px 0; height:auto;"><i style="font-size:14px;">没有发表任何求解</i></div> -->
             </ul>
-          </div>
+
         </div>
 
     </div>

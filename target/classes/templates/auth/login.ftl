@@ -14,7 +14,7 @@
           <div class="layui-form layui-form-pane">
             <form method="post">
               <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">邮箱</label>
+                <label for="L_username" class="layui-form-label">昵称</label>
                 <div class="layui-input-inline">
                   <input type="text" id="L_username" name="username" required lay-verify="required" autocomplete="off" class="layui-input">
                 </div>
@@ -32,11 +32,11 @@
                   <a href="/user/forget">忘记密码？</a>
                 </span>
               </div>
-              <div class="layui-form-item fly-form-app">
-                <span>或者使用社交账号登入</span>
-                <a href="/app/qq" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-qq" title="QQ登入"></a>
-                <a href="/app/weibo/" onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-weibo" title="微博登入"></a>
-              </div>
+              <#--<div class="layui-form-item fly-form-app">-->
+                <#--<span>或者使用社交账号登入</span>-->
+                <#--<a href="/app/qq" onclick="layer.msg('正在通过QQ登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-qq" title="QQ登入"></a>-->
+                <#--<a href="/app/weibo/" onclick="layer.msg('正在通过微博登入', {icon:16, shade: 0.1, time:0})" class="iconfont icon-weibo" title="微博登入"></a>-->
+              <#--</div>-->
             </form>
           </div>
         </div>
