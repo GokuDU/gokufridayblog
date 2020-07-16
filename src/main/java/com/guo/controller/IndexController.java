@@ -18,6 +18,8 @@ public class IndexController extends BaseController{
         // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
         IPage pageResults = postService.paging(getPage(),null,null,null,null,"created");
 
+        req.setAttribute("isRecommendHighLight", 0); // 0 全部博客  1 精华博客
+        req.setAttribute("isNewOrHost", 0);     // 0 最新博客   1 热议博客
         req.setAttribute("pageData", pageResults);
         req.setAttribute("currentCategoryId", 0);
         return "index";
@@ -30,6 +32,7 @@ public class IndexController extends BaseController{
         // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
         IPage pageResults = postService.paging(getPage(),null,null,null,true,"created");
 
+        req.setAttribute("isRecommendHighLight", 1);
         req.setAttribute("pageData", pageResults);
         req.setAttribute("currentCategoryId", 0);
         return "index";
@@ -42,6 +45,8 @@ public class IndexController extends BaseController{
         // 1.分页信息 2.分类  3.用户  4.置顶  5.精选(精华)  6.排序
         IPage pageResults = postService.paging(getPage(),null,null,null,null,"comment_count");
 
+        req.setAttribute("isNewOrHost", 1);
+        req.setAttribute("isRecommendHighLight", 0);
         req.setAttribute("pageData", pageResults);
         req.setAttribute("currentCategoryId", 0);
         return "index";

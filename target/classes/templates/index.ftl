@@ -30,13 +30,15 @@
             <div class="fly-panel" style="margin-bottom: 0;">
 
                 <div class="fly-panel-title fly-filter">
-                    <a href="/index" class="layui-this">综合</a>
+
+                    <a href="/index" <#if isRecommendHighLight == 0>class="layui-this"</#if>>综合</a>
                     <span class="fly-mid"></span>
-                    <a href="/betterPostIndex">精华</a>
+                    <a href="/betterPostIndex" <#if isRecommendHighLight == 1>class="layui-this"</#if>>精华</a>
+
                     <span class="fly-filter-right layui-hide-xs">
-                        <a href="/index" class="layui-this">按最新</a>
+                        <a href="/index" <#if isNewOrHost == 0>class="layui-this"</#if>>按最新</a>
                         <span class="fly-mid"></span>
-                        <a href="/hostPostIndex">按热议</a>
+                        <a href="/hostPostIndex" <#if isNewOrHost == 1>class="layui-this"</#if>>按热议</a>
                     </span>
                 </div>
 
