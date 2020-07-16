@@ -10,9 +10,9 @@
             <li class="layui-nav-item">
                 <a href="https://github.com/GokuDU"><i class="iconfont icon-iconmingxinganli"></i>GitHub</a>
             </li>
-            <#--<li class="layui-nav-item">-->
-                <#--<a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>-->
-            <#--</li>-->
+            <li class="layui-nav-item">
+                <a href="https://gokudu.github.io/docsify-blog/" target="_blank"><i class="iconfont icon-logo"></i>Study Notes</a>
+            </li>
         </ul>
 
         <ul class="layui-nav fly-nav-user">
