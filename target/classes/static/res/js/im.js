@@ -13,7 +13,8 @@ tio.ws = function ($,layim) {  // 构造方法 传过来的参数： layui.jquer
     // 建立连接
     this.connect = function () {
         var url = "ws://localhost:9981?userId=" + self.userId;
-        var socket = new WebSocket(url);
+        var url = "ws://112.74.110.84:9981?userId=" + self.userId;
+        // var socket = new WebSocket(url);
 
         // 设置全局 socket
         self.socket = socket;

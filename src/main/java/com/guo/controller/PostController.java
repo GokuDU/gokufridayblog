@@ -388,20 +388,17 @@ public class PostController extends BaseController{
         );
 
         if (userAction.getPoint().equals(1)) {
-                userAction.setPoint(0);
-                userAction.setModified(new Date());
-                userActionService.updateById(userAction);
-
-                comment.setVoteDown(comment.getVoteDown()+1);
-                userAction.setModified(new Date());
-                commentService.updateById(comment);
-                return Result.success().action("/post/"+post.getId());
+//                userAction.setPoint(0);
+//                userAction.setModified(new Date());
+//                userActionService.updateById(userAction);
+//
+//                comment.setVoteDown(comment.getVoteDown()+1);
+//                userAction.setModified(new Date());
+//                commentService.updateById(comment);
+//                return Result.success().action("/post/"+post.getId());
+            return Result.fail("您已经点过赞了");
         } else if (userAction.getPoint().equals(0)) {
-            userAction.setPoint(1);
-            userActionService.updateById(userAction);
-
-            comment.setVoteUp(comment.getVoteUp()+1);
-            commentService.updateById(comment);
+            return Result.fail("您之前已经点过赞了");
         }
 
         return Result.success().action("/post/"+post.getId());

@@ -1,10 +1,13 @@
+
 # DataSource Config
 spring:
   datasource:
  #   driver-class-name: com.mysql.cj.jdbc.Driver
     driver-class-name: com.p6spy.engine.spy.P6SpyDriver
  #   url: jdbc:mysql://localhost:3306/gfblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
-    url: jdbc:p6spy:mysql://localhost:3306/gfblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+#    url: jdbc:p6spy:mysql://localhost:3306/gfblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+#    url: jdbc:p6spy:mysql://112.74.110.84:3306/gfblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+    url: jdbc:p6spy:mysql://gfmysql:3306/gfblog?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=UTC
     username: root
     password: 123456
   freemarker:
@@ -14,19 +17,28 @@ spring:
       number_format: 0.##
   # redis配置因为都是默认值，所以其实是可以不写的
   redis:
-    hosts: localhost
+#    host: localhost
+#    host: 112.74.110.84
+    host: gfredis
     port: 6379
     password:
+    database: 0
   data:
     elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 112.74.110.84:9300
+#      cluster-name: elasticsearch  # 部署时根据服务器启动的es具体名称修改
+      cluster-name: docker-gokufridayblog-es  # 部署时
+#      cluster-nodes: 112.74.110.84:9300
+      cluster-nodes: gfes:9300
       repositories:
         enabled: true
   rabbitmq:
-    username: guest
-    password: guest
-    host: localhost
+#    username: guest
+#    password: guest
+    username: root
+    password: 123456
+#    host: localhost
+#    host: 112.74.110.84
+    host: gfrabbit
     port: 5672
 # 邮件
   mail:
@@ -41,3 +53,5 @@ file:
 im:
   server:
     port: 9981
+server:
+  port: 80
