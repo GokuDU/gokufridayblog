@@ -29,7 +29,6 @@ public class ShiroConfig {
 
     @Bean(name = "securityManager")
     public DefaultWebSecurityManager securityManager(AccountRealm accountRealm){
-
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(accountRealm);
 
@@ -40,7 +39,6 @@ public class ShiroConfig {
 
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager) {
-
         // 过滤器工厂
         ShiroFilterFactoryBean filterFactoryBean = new ShiroFilterFactoryBean();
         filterFactoryBean.setSecurityManager(securityManager);
