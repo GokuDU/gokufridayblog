@@ -7,6 +7,8 @@ import com.guo.config.RabbitMqConfig;
 import com.guo.entity.Post;
 import com.guo.search.mq.entity.PostMqIndexMessage;
 import com.guo.vo.PostVO;
+import org.springframework.amqp.core.DirectExchange;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.PostMapping;
